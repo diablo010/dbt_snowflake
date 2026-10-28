@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: STG_CUSTOMERS
+    description: "Staging table for customers"
+    columns:
+      - name: customer_id
+        description: "The primary key for stg_customers table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: STG_ORDERS
+    description: "Staging table for orders"
+    columns:
+      - name: order_id
+        description: "The primary key for stg_orders table"
+        data_tests:
+          - unique
+          - not_null
+
+  - name: STG_PRODUCTS
+    description: "Staging table for products"
+    columns:
+      - name: product_id
+        description: "The primary key for stg_products table"
+        data_tests:
+          - unique
+          - not_null
