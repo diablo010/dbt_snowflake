@@ -1,0 +1,12 @@
+{{ config(materialized='table') }}
+
+SELECT 
+    S.SALE_ID,
+    S.SALE_DATE,
+    C.CUSTOMER_ID,
+    P.PRODUCT_ID,
+    S.QUANTITY,
+    S.AMOUNT
+FROM {{ ref('STG_SALES') }} S
+LEFT JOIN {{ ref('STG_CUSTOMERS') }} C ON S.CUSTOMER_ID = C.CUSTOMER_ID
+LEFT JOIN {{ ref('STG_PRODUCTS') }} P ON S.PRODUCT_ID = P.PRODUCT_ID

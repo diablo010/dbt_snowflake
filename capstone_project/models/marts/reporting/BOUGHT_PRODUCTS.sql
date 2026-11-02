@@ -1,0 +1,7 @@
+{{ config(materialized='table') }}
+
+SELECT 
+    DISTINCT PRODUCT_ID,
+    SUM(QUANTITY) AS TOTAL_QUANTITY
+FROM {{ ref('FACT_SALES') }} 
+GROUP BY PRODUCT_ID

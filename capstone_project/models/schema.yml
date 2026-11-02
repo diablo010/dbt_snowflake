@@ -10,11 +10,11 @@ models:
           - unique
           - not_null
 
-  - name: STG_ORDERS
-    description: "Staging table for orders"
+  - name: STG_SALES
+    description: "Staging table for sales"
     columns:
-      - name: order_id
-        description: "The primary key for stg_orders table"
+      - name: sale_id
+        description: "The primary key for stg_sales table"
         data_tests:
           - unique
           - not_null
@@ -27,3 +27,42 @@ models:
         data_tests:
           - unique
           - not_null
+
+  - name: DIM_CUSTOMER
+    description: "Customer dimension table"
+    columns:
+      - name: CUSTOMER_ID
+        tests:
+          - unique
+          - not_null
+
+  - name: DIM_PRODUCT
+    description: "Product dimension table"
+    columns:
+      - name: PRODUCT_ID
+        tests:
+          - unique
+          - not_null
+
+  - name: FACT_SALES
+    description: "Fact table containing sales transactions"
+    columns:
+      - name: SALE_ID
+        tests:
+          - unique
+          - not_null
+
+      - name: CUSTOMER_ID
+        tests:
+          - relationships:
+              arguments:
+                to: ref('DIM_CUSTOMER')
+                field: CUSTOMER_ID
+
+      - name: PRODUCT_ID
+        tests:
+          - relationships:
+              arguments:
+                to: ref('DIM_PRODUCT')
+                field: PRODUCT_ID
+
