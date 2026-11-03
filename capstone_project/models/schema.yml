@@ -44,7 +44,7 @@ models:
           - unique
           - not_null
 
-  - name: FACT_SALES
+  - name: FCT_SALES
     description: "Fact table containing sales transactions"
     columns:
       - name: SALE_ID
@@ -65,4 +65,3 @@ models:
               arguments:
                 to: ref('DIM_PRODUCT')
                 field: PRODUCT_ID
-

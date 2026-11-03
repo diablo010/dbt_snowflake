@@ -2,4 +2,4 @@
 
 SELECT 
     DISTINCT CUSTOMER_ID
-FROM {{ ref('FACT_SALES') }} 
+FROM {{ ref('FCT_SALES') }} 
