@@ -1,4 +1,9 @@
-{{config(materialized='view')}}
+{{
+    config(
+        materialized='view'
+        )
+}}
+
 
 SELECT
     CUSTOMER_ID,

@@ -1,7 +1,11 @@
 -- WEEKLY SUMMARY
 
-{{ config(materialized='table') }}
-
+{{ 
+    config(
+        materialized='table',
+        tags=['sales']
+        ) 
+}}
 SELECT 
     EXTRACT(WEEK FROM S.SALE_DATE) AS SALE_WEEK,
     SUM(S.AMOUNT) AS TOTAL_SALES_AMOUNT

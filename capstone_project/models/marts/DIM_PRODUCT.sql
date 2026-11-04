@@ -1,5 +1,9 @@
-{{ config(materialized='table') }}
-
+{{ 
+    config(
+        materialized='table',
+        tags=['dimension', 'product']
+        ) 
+}}
 select 
     PRODUCT_ID,
     PRODUCT_NAME,

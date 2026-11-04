@@ -2,7 +2,8 @@
     config(
       materialized='incremental',
       unique_key='sale_id',
-      incremental_strategy='merge'
+      incremental_strategy='merge',
+      tags=['sales', 'fact']
     )
 }}
 

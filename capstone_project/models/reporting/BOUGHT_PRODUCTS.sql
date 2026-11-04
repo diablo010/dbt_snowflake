@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='table',
+        tags=['product']
+        ) 
+}}
 
 SELECT 
     DISTINCT PRODUCT_ID,

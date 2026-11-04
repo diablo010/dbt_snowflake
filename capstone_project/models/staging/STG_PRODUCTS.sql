@@ -1,4 +1,7 @@
-{{config(materialized='view')}}
+{{
+    config(
+        materialized='view'    )
+}}
 
 SELECT
     PRODUCT_ID,

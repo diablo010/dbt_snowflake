@@ -35,5 +35,13 @@ models:
     staging:
       # +schema: stage
       +materialized: view
+      +tags:
+        - staging
     marts:
       +materialized: table
+      +tags:
+        - marts
+    reporting:
+      +materialized: table
+      +tags:
+        - reporting

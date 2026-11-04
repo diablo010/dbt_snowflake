@@ -1,6 +1,11 @@
 -- CUSTOMERWISE SUMMARY
 
-{{ config(materialized='view') }}
+{{ 
+    config(
+        materialized='view',
+        tags=['customer', 'sales']
+        ) 
+}}
 
 SELECT 
     C.CUSTOMER_ID,

@@ -1,4 +1,9 @@
-{{ config(materialized='table') }}
+{{ 
+    config(
+        materialized='table',
+        tags=['customer']
+        ) 
+}}
 
 SELECT 
     EXTRACT(WEEK FROM S.SALE_DATE) AS WEEK,

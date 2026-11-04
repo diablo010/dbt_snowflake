@@ -1,7 +1,11 @@
 -- PRODUCTWISE SUMMARY
 
-{{ config(materialized='view') }}
-
+{{ 
+    config(
+        materialized='view',
+        tags=['product']
+        ) 
+}}
 SELECT 
     P.PRODUCT_ID,
     P.PRODUCT_NAME,
